@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+  </head>
+  <body>
+    <h1>Formulário</h1>
+
+    <form id="formularios">
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <label for="nome">Nome: </label>
+        <input
+          type="text"
+          id="nome"
+          required
+          placeholder="Nome completo"
+          name="nome"
+        />
+        <br /><br />
+        <label for="endereco">Endereço: </label>
+        <input type="text" required name="endereço" id="endereço" />
+
+        <br /><br />
+
+        <label for="cidade">Cidade: </label>
+        <input type="text" name="cidade" id="cidade" required />
+
+        <br /><br />
+
+        <label for="estado">Estado: </label>
+        <select name="estado" id="estado">
+          <option value="al">Alagoas</option>
+          <option value="ap">Amapá</option>
+          <option value="am">Amazonas</option>
+          <option value="ba">Bahia</option>
+          <option value="ce">Ceará</option>
+          <option value="df">Distrito Federal</option>
+          <option value="es">Espírito Santo</option>
+          <option value="go">Goiás</option>
+          <option value="ma">Maranhão</option>
+          <option value="mt">Mato Grosso</option>
+          <option value="ms">Mato Grosso do Sul</option>
+          <option value="mg">Minas Gerais</option>
+          <option value="pa">Pará</option>
+          <option value="pb">Paraíba</option>
+          <option value="pr">Paraná</option>
+          <option value="pe">Pernambuco</option>
+          <option value="pi">Piauí</option>
+          <option value="rj">Rio de Janeiro</option>
+          <option value="rn">Rio Grande de Norte</option>
+          <option value="rs">Rio Grande do Sul</option>
+          <option value="ro">Rondônia</option>
+          <option value="rr">Roraima</option>
+          <option value="sc">Santa Catarina</option>
+          <option value="sp" selected>São Paulo</option>
+          <option value="se">Sergipe</option>
+          <option value="to">Tocantins</option>
+        </select>
+      </fieldset>
+
+      <br />
+
+      <fieldset>
+        <legend>Dados profissionais</legend>
+
+        <label for="">Natureza do Cargo</label>
+        <br />
+
+        <input
+          type="radio"
+          name="cargo"
+          value="gerencia"
+          id="gerencia"
+          checked
+        />
+        <label for="gerencia">Gerência</label>
+
+        <input type="radio" name="cargo" value="financeiro" id="financeiro" />
+        <label for="financeiro">Financeiro</label>
+
+        <input type="radio" name="cargo" value="recepcao" id="recepcao" />
+        <label for="recepcao">Recepção</label>
+
+        <input type="radio" name="cargo" value="adm" id="adm" />
+        <label for="adm">Administrativo</label>
+
+        <input type="radio" name="cargo" value="juridico" id="juridico" />
+        <label for="juridico">Jurídico</label>
+
+        <br /><br />
+
+        <label for="">Área de Interesse</label>
+        <br />
+
+        <input type="checkbox" name="computacao" id="computacao" />
+        <label for="computacao">Computação</label>
+
+        <input type="checkbox" name="biologia" id="biologia" />
+        <label for="biologia">Biologia</label>
+
+        <input type="checkbox" name="meio-ambiente" id="meio-ambiente" />
+        <label for="meio-ambiente">Meio Ambiente</label>
+
+        <input type="checkbox" name="engenharia" id="engenharia" />
+        <label for="engenharia">Engenharia</label>
+
+        <input type="checkbox" name="historia" id="historia" />
+        <label for="historia">História</label>
+
+        <br /><br />
+        <label for="">Mini-currículo: </label>
+        <textarea name="curriculo" id="curriculo" cols="50" rows="8"></textarea>
+      </fieldset>
+      <br />
+      <input type="submit" value="Enviar" />
+      <input type="reset" value="Limpar" />
+    </form>
+    <script>
+      function validar() {
+        let nome = form.nome.value;
+        // let endereco = form.endereco.value;
+        // let cidade = form.cidade.value;
+        // let estado = form.estado.value;
+
+        if (
+          document.getElementById("computacao").checked == false &&
+          document.getElementById("biologia").checked == false &&
+          document.getElementById("meio-ambiente").checked == false &&
+          document.getElementById("engenharia").checked == false &&
+          document.getElementById("historia").checked == false
+        ) {
+          alert("Favor clicar em pelo menos uma das áreas de interesse!");
+        } else {
+          alert("Formulário enviado com sucesso!");
+        }
+      }
+
+      console.log(nome);
+    </script>
+  </body>
+</html>
