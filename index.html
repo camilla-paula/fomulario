@@ -22,7 +22,7 @@
         />
         <br /><br />
         <label for="endereco">Endereço: </label>
-        <input type="text" required name="endereço" id="endereço" />
+        <input type="text" required name="endereco" id="endereco" />
 
         <br /><br />
 
@@ -85,8 +85,13 @@
         <input type="radio" name="cargo" value="recepcao" id="recepcao" />
         <label for="recepcao">Recepção</label>
 
-        <input type="radio" name="cargo" value="adm" id="adm" />
-        <label for="adm">Administrativo</label>
+        <input
+          type="radio"
+          name="cargo"
+          value="administrativo"
+          id="administrativo"
+        />
+        <label for="administrativo">Administrativo</label>
 
         <input type="radio" name="cargo" value="juridico" id="juridico" />
         <label for="juridico">Jurídico</label>
@@ -96,19 +101,44 @@
         <label for="">Área de Interesse</label>
         <br />
 
-        <input type="checkbox" name="computacao" id="computacao" />
+        <input
+          type="checkbox"
+          name="interesses"
+          id="computacao"
+          value="computacao"
+        />
         <label for="computacao">Computação</label>
 
-        <input type="checkbox" name="biologia" id="biologia" />
+        <input
+          type="checkbox"
+          name="interesses"
+          id="biologia"
+          value="biologia"
+        />
         <label for="biologia">Biologia</label>
 
-        <input type="checkbox" name="meio-ambiente" id="meio-ambiente" />
+        <input
+          type="checkbox"
+          name="interesses"
+          id="meio-ambiente"
+          value="meio-ambiente"
+        />
         <label for="meio-ambiente">Meio Ambiente</label>
 
-        <input type="checkbox" name="engenharia" id="engenharia" />
+        <input
+          type="checkbox"
+          name="interesses"
+          id="engenharia"
+          value="engenharia"
+        />
         <label for="engenharia">Engenharia</label>
 
-        <input type="checkbox" name="historia" id="historia" />
+        <input
+          type="checkbox"
+          name="interesses"
+          id="historia"
+          value="historia"
+        />
         <label for="historia">História</label>
 
         <br /><br />
@@ -116,30 +146,10 @@
         <textarea name="curriculo" id="curriculo" cols="50" rows="8"></textarea>
       </fieldset>
       <br />
-      <input type="submit" value="Enviar" />
+      
+      <input type="button" value="Enviar" onclick="enviarFormulario()" />
       <input type="reset" value="Limpar" />
     </form>
-    <script>
-      function validar() {
-        let nome = form.nome.value;
-        // let endereco = form.endereco.value;
-        // let cidade = form.cidade.value;
-        // let estado = form.estado.value;
-
-        if (
-          document.getElementById("computacao").checked == false &&
-          document.getElementById("biologia").checked == false &&
-          document.getElementById("meio-ambiente").checked == false &&
-          document.getElementById("engenharia").checked == false &&
-          document.getElementById("historia").checked == false
-        ) {
-          alert("Favor clicar em pelo menos uma das áreas de interesse!");
-        } else {
-          alert("Formulário enviado com sucesso!");
-        }
-      }
-
-      console.log(nome);
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>
